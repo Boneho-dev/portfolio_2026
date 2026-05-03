@@ -1,0 +1,799 @@
+/* ╔══════════════════════════════════════════════════════════════╗
+   ║       AGRE AGENCY — Custom Styles & Animations               ║
+   ║  Auteur : Ange-Kevin Agré | agrekevin09@gmail.com            ║
+   ║  Ce fichier complète Tailwind avec les animations,           ║
+   ║  le curseur personnalisé et les transitions complexes.       ║
+   ╚══════════════════════════════════════════════════════════════╝ */
+
+/* ── Palette (référence, les valeurs Tailwind étendent ces vars) ── */
+:root {
+    --turquoise : #2AC1C4;
+    --petrol    : #134B5F;
+    --sky       : #5BC0DE;
+    --anthracite: #3D4439;
+    --dark-bg   : #071e2b;
+}
+
+/* ── Base ──────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    cursor: none;        /* remplacé par le curseur custom */
+    overflow-x: hidden;
+    background-color: var(--dark-bg);
+    font-family: 'Inter', sans-serif;
+    color: #e2e8f0;
+}
+
+/* Fallback cursor sur écrans tactiles */
+@media (pointer: coarse) {
+    body { cursor: auto; }
+    .cursor-dot, .cursor-ring { display: none !important; }
+    a, button, [data-cursor] { cursor: pointer; }
+}
+
+/* ── ① CURSEUR PERSONNALISÉ ─────────────────────────────────────
+   Deux couches : un point centré (suit la souris instantanément)
+   + un anneau extérieur (suit avec inertie via requestAnimationFrame).
+   L'état `.cursor-hover` s'applique sur survol de liens/boutons.   */
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--turquoise);
+    border-radius: 50%;
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition: background 0.2s, transform 0.15s;
+    will-change: left, top;
+}
+
+.cursor-ring {
+    width: 38px;
+    height: 38px;
+    border: 2px solid rgba(42, 193, 196, 0.55);
+    border-radius: 50%;
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 99998;
+    transform: translate(-50%, -50%);
+    transition: width 0.35s, height 0.35s, border-color 0.35s,
+                background-color 0.35s, opacity 0.35s;
+    will-change: left, top;
+}
+
+/* État hover : l'anneau grossit et le point rétrécit */
+body.cursor-hover .cursor-dot {
+    transform: translate(-50%, -50%) scale(0.4);
+    background: #fff;
+}
+
+body.cursor-hover .cursor-ring {
+    width: 58px;
+    height: 58px;
+    border-color: var(--turquoise);
+    background-color: rgba(42, 193, 196, 0.08);
+}
+
+/* ── ② NAVBAR ───────────────────────────────────────────────────
+   Au départ transparente, elle devient glass/blur après 80px de scroll. */
+
+#navbar {
+    transition: background 0.45s ease, backdrop-filter 0.45s ease,
+                box-shadow 0.45s ease;
+}
+
+#navbar.scrolled {
+    background: rgba(7, 30, 43, 0.82) !important;
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* Lien de navigation avec soulignement animé */
+.nav-link {
+    position: relative;
+    color: rgba(255, 255, 255, 0.72);
+    transition: color 0.3s;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; left: 0;
+    width: 0; height: 2px;
+    background: linear-gradient(90deg, var(--turquoise), var(--sky));
+    border-radius: 1px;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active { color: #fff; }
+
+.nav-link:hover::after,
+.nav-link.active::after { width: 100%; }
+
+/* Menu mobile */
+#mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+#mobile-menu.open { max-height: 640px; }
+
+/* ── ③ HERO ─────────────────────────────────────────────────────
+   Fond dégradé sombre avec deux "orbes" flottantes en arrière-plan.  */
+
+.hero-bg {
+    background: linear-gradient(135deg, #050f17 0%, #071e2b 30%, var(--petrol) 70%, #0a2535 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Superposition radiale douce */
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 60% 60% at 75% 45%, rgba(42,193,196,0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 50% at 20% 75%, rgba(91,192,222,0.05) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+/* Orbes animées */
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.13;
+    pointer-events: none;
+}
+
+.orb-1 {
+    width: 500px; height: 500px;
+    background: var(--turquoise);
+    top: -150px; right: -150px;
+    animation: floatOrb 9s ease-in-out infinite;
+}
+
+.orb-2 {
+    width: 350px; height: 350px;
+    background: var(--sky);
+    bottom: -80px; left: 5%;
+    animation: floatOrb 7s ease-in-out infinite 3s;
+}
+
+@keyframes floatOrb {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50%       { transform: translateY(-35px) scale(1.06); }
+}
+
+/* ── Texte gradient animé ─────────────────────────────────────── */
+.gradient-text {
+    background: linear-gradient(135deg, var(--turquoise) 0%, var(--sky) 50%, var(--turquoise) 100%);
+    background-size: 220% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 4.5s linear infinite;
+}
+
+@keyframes shimmer {
+    to { background-position: 220% center; }
+}
+
+/* Curseur clignotant pour l'effet de frappe */
+#typing-text::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+    color: var(--turquoise);
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* ── Carte code dans le Hero ─────────────────────────────────── */
+.hero-code-card {
+    background: rgba(7, 20, 32, 0.85);
+    border: 1px solid rgba(42, 193, 196, 0.2);
+    border-radius: 1.25rem;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(42,193,196,0.08);
+    overflow: hidden;
+    animation: heroCardFloat 6s ease-in-out infinite;
+}
+
+@keyframes heroCardFloat {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50%       { transform: translateY(-14px) rotate(-1deg); }
+}
+
+.code-bar { background: rgba(255,255,255,0.04); }
+
+.code-dot {
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Couleurs de syntaxe dans la carte hero */
+.syn-comment { color: #637777; font-style: italic; }
+.syn-keyword { color: #c792ea; }
+.syn-class    { color: #ffcb6b; }
+.syn-string   { color: #a3e4a3; }
+.syn-variable { color: #80cbc4; }
+.syn-property { color: var(--sky); }
+.syn-type     { color: #f78c6c; }
+.syn-fn       { color: var(--turquoise); }
+
+/* ── ④ ANIMATIONS AU SCROLL (IntersectionObserver) ─────────────
+   Les éléments [data-animate] sont invisibles par défaut et
+   glissent en position dès qu'ils entrent dans le viewport.         */
+
+[data-animate] {
+    opacity: 0;
+    transform: translateY(44px);
+    transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+[data-animate="left"]  { transform: translateX(-44px); }
+[data-animate="right"] { transform: translateX(44px);  }
+[data-animate="scale"] { transform: scale(0.88);       }
+[data-animate="fade"]  { transform: none;               }
+
+[data-animate].animate-in {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+/* Délais en cascade pour les grilles de cartes */
+[data-delay="1"] { transition-delay: 0.10s; }
+[data-delay="2"] { transition-delay: 0.20s; }
+[data-delay="3"] { transition-delay: 0.30s; }
+[data-delay="4"] { transition-delay: 0.40s; }
+[data-delay="5"] { transition-delay: 0.50s; }
+
+/* ── ⑤ COMPOSANTS GÉNÉRIQUES ─────────────────────────────────── */
+
+/* Badge de section */
+.section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--turquoise);
+    background: rgba(42, 193, 196, 0.1);
+    border: 1px solid rgba(42, 193, 196, 0.22);
+    padding: 0.38rem 1.1rem;
+    border-radius: 999px;
+}
+
+/* Trait décoratif sous les titres */
+.section-divider {
+    width: 52px; height: 3px;
+    background: linear-gradient(90deg, var(--turquoise), transparent);
+    border-radius: 2px;
+}
+
+/* ── Boutons ──────────────────────────────────────────────────── */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #2AC1C4, #1da6a9);
+    color: #fff;
+    padding: 0.9rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    border: none;
+    cursor: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.22s, box-shadow 0.22s, filter 0.22s;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.12), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 36px rgba(42, 193, 196, 0.45);
+    filter: brightness(1.08);
+}
+
+.btn-primary:hover::after { opacity: 1; }
+.btn-primary:active       { transform: translateY(0); }
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--sky);
+    padding: 0.875rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1.5px solid rgba(91, 192, 222, 0.45);
+    cursor: none;
+    transition: border-color 0.3s, background 0.3s, color 0.3s, transform 0.22s;
+}
+
+.btn-outline:hover {
+    border-color: var(--sky);
+    background: rgba(91, 192, 222, 0.09);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* ── ⑥ CARTES SERVICES ───────────────────────────────────────── */
+.service-card {
+    background: rgba(19, 75, 95, 0.28);
+    border: 1px solid rgba(42, 193, 196, 0.13);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.45s ease,
+                border-color 0.45s ease,
+                background 0.45s ease;
+}
+
+/* Halo coloré en haut à droite */
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(42,193,196,0.12) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.45s;
+}
+
+.service-card:hover {
+    transform: translateY(-14px);
+    box-shadow: 0 28px 64px rgba(42, 193, 196, 0.18),
+                0 0 0 1px rgba(42, 193, 196, 0.28);
+    border-color: rgba(42, 193, 196, 0.45);
+    background: rgba(19, 75, 95, 0.48);
+}
+
+.service-card:hover::before { opacity: 1; }
+
+.service-icon {
+    width: 62px; height: 62px;
+    background: linear-gradient(135deg, rgba(42,193,196,0.18), rgba(91,192,222,0.09));
+    border: 1px solid rgba(42, 193, 196, 0.28);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.65rem;
+    margin-bottom: 1.25rem;
+    transition: transform 0.4s, background 0.4s;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.12) rotate(6deg);
+    background: linear-gradient(135deg, rgba(42,193,196,0.32), rgba(91,192,222,0.18));
+}
+
+/* ── ⑦ SLIDER TÉMOIGNAGES ────────────────────────────────────── */
+.testimonials-wrapper { overflow: hidden; }
+
+.testimonials-track {
+    display: flex;
+    transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+/* 1 carte visible par défaut, 2 sur desktop */
+.testimonial-card { min-width: 100%; padding: 0.75rem; }
+
+@media (min-width: 768px) {
+    .testimonial-card { min-width: 50%; }
+}
+
+.testimonial-inner {
+    background: rgba(19, 75, 95, 0.38);
+    border: 1px solid rgba(91, 192, 222, 0.18);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    height: 100%;
+    position: relative;
+    transition: border-color 0.35s, box-shadow 0.35s;
+}
+
+/* Guillemet décoratif */
+.testimonial-inner::before {
+    content: '\201C';
+    position: absolute;
+    top: 0.5rem; left: 1.25rem;
+    font-size: 7rem;
+    color: rgba(42, 193, 196, 0.12);
+    font-family: Georgia, serif;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.testimonial-inner:hover {
+    border-color: rgba(42, 193, 196, 0.38);
+    box-shadow: 0 10px 36px rgba(42, 193, 196, 0.1);
+}
+
+/* Boutons navigation slider */
+.slider-nav-btn {
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    background: rgba(19, 75, 95, 0.5);
+    border: 1px solid rgba(42, 193, 196, 0.25);
+    color: var(--sky);
+    display: flex; align-items: center; justify-content: center;
+    cursor: none;
+    transition: background 0.3s, border-color 0.3s, color 0.3s, transform 0.2s;
+    flex-shrink: 0;
+}
+
+.slider-nav-btn:hover {
+    background: rgba(42, 193, 196, 0.18);
+    border-color: var(--turquoise);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Points du slider */
+.slider-dot {
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(91, 192, 222, 0.28);
+    transition: background 0.3s, width 0.35s;
+    cursor: pointer;
+}
+
+.slider-dot.active {
+    background: var(--turquoise);
+    width: 24px !important;
+}
+
+/* ── ⑧ CARTES PROJETS ────────────────────────────────────────── */
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    cursor: none;
+    aspect-ratio: 16 / 10;
+}
+
+.project-card img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.65s ease;
+}
+
+.project-card:hover img { transform: scale(1.07); }
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(7, 30, 43, 0.96) 0%,
+        rgba(19, 75, 95, 0.55) 50%,
+        transparent 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    transition: background 0.4s;
+}
+
+.project-reveal {
+    transform: translateY(18px);
+    opacity: 0;
+    transition: transform 0.45s ease, opacity 0.45s ease;
+}
+
+.project-card:hover .project-reveal {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* ── ⑨ MODALE PROJETS ────────────────────────────────────────── */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 15, 25, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 9900;
+    display: none;         /* géré en JS */
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-backdrop.show { opacity: 1; }
+
+.modal-box {
+    background: linear-gradient(160deg, #0b2535, var(--petrol));
+    border: 1px solid rgba(42, 193, 196, 0.28);
+    border-radius: 2rem;
+    max-width: 740px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: scale(0.88) translateY(24px);
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    scrollbar-width: thin;
+    scrollbar-color: var(--turquoise) transparent;
+}
+
+.modal-backdrop.show .modal-box {
+    transform: scale(1) translateY(0);
+}
+
+/* ── ⑩ TIMELINE PARCOURS ─────────────────────────────────────── */
+.timeline-item {
+    position: relative;
+    padding-left: 2.25rem;
+    padding-bottom: 2rem;
+}
+
+/* Ligne verticale */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 5px; top: 14px; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--turquoise) 0%, rgba(42,193,196,0.08) 100%);
+}
+
+.timeline-item:last-child::before { display: none; }
+
+/* Point sur la ligne */
+.timeline-dot {
+    position: absolute;
+    left: -1px; top: 5px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--turquoise);
+    border: 2px solid var(--dark-bg);
+    box-shadow: 0 0 0 4px rgba(42, 193, 196, 0.2);
+}
+
+/* ── ⑪ FAQ ACCORDÉON ─────────────────────────────────────────── */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.52s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.faq-item.open .faq-answer { max-height: 380px; }
+
+.faq-question { cursor: none; user-select: none; }
+
+.faq-icon {
+    transition: transform 0.42s ease;
+    flex-shrink: 0;
+    color: var(--turquoise);
+}
+
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+.faq-item {
+    border-bottom: 1px solid rgba(91, 192, 222, 0.12);
+    transition: background 0.3s;
+}
+
+.faq-item:last-child { border-bottom: none; }
+
+/* ── ⑫ FORMULAIRE CONTACT ────────────────────────────────────── */
+.form-input {
+    width: 100%;
+    background: rgba(19, 75, 95, 0.28);
+    border: 1px solid rgba(91, 192, 222, 0.2);
+    border-radius: 0.875rem;
+    color: #fff;
+    padding: 0.9rem 1.25rem;
+    font-size: 0.92rem;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.form-input:focus {
+    border-color: var(--turquoise);
+    box-shadow: 0 0 0 3px rgba(42, 193, 196, 0.14);
+    background: rgba(19, 75, 95, 0.45);
+}
+
+.form-input::placeholder { color: rgba(255, 255, 255, 0.32); }
+
+/* ── Feedback formulaire — animation d'entrée / sortie ──────────
+   feedbackIn  : glisse vers le bas + apparaît (entrée spring)
+   feedbackOut : disparaît en fondu avant que JS ajoute .hidden    */
+
+@keyframes feedbackIn {
+    from { opacity: 0; transform: translateY(-10px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0)      scale(1);   }
+}
+
+@keyframes feedbackOut {
+    from { opacity: 1; transform: scale(1);    }
+    to   { opacity: 0; transform: scale(0.97); }
+}
+
+/* Déclenchée à chaque affichage (JS retire .hidden) */
+#form-feedback:not(.hidden) {
+    animation: feedbackIn 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Déclenchée juste avant de masquer (JS ajoute .hiding) */
+#form-feedback.hiding {
+    animation: feedbackOut 0.4s ease forwards;
+}
+
+/* Couleur turquoise pour le succès — remplace le vert Tailwind
+   Le sélecteur [data-type] est posé par showFeedback() dans main.js */
+#form-feedback[data-type="success"] {
+    background   : rgba(42, 193, 196, 0.10);
+    border-color : rgba(42, 193, 196, 0.35);
+    color        : #2AC1C4;
+}
+
+/* ── ⑬ LIENS SOCIAUX ─────────────────────────────────────────── */
+.social-link {
+    width: 44px; height: 44px;
+    background: rgba(42, 193, 196, 0.09);
+    border: 1px solid rgba(42, 193, 196, 0.2);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--sky);
+    font-size: 1.1rem;
+    transition: background 0.3s, border-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.social-link:hover {
+    background: rgba(42, 193, 196, 0.22);
+    border-color: var(--turquoise);
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+/* ── ⑭ BADGES TECHNIQUES ─────────────────────────────────────── */
+.tech-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: rgba(42, 193, 196, 0.1);
+    border: 1px solid rgba(42, 193, 196, 0.22);
+    color: var(--sky);
+    font-size: 0.73rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.tech-badge:hover {
+    background: rgba(42, 193, 196, 0.2);
+    color: #fff;
+}
+
+/* ── ⑮ AVATAR avec bordure dégradée ─────────────────────────── */
+.avatar-gradient-border {
+    border: 3px solid transparent;
+    background:
+        linear-gradient(var(--dark-bg), var(--dark-bg)) padding-box,
+        linear-gradient(135deg, var(--turquoise), var(--sky)) border-box;
+}
+
+/* ── ⑯ SECTION ALTERNANCE (badge CTA) ───────────────────────── */
+.badge-dispo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #a7f3d0;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.28);
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+}
+
+.badge-dispo::before {
+    content: '';
+    width: 8px; height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25); }
+    50%       { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.08); }
+}
+
+/* ── ⑰ SCROLLBAR CUSTOM ──────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--dark-bg); }
+::-webkit-scrollbar-thumb { background: var(--turquoise); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--sky); }
+
+/* ── ⑱ ÉTOILES (témoignages) ─────────────────────────────────── */
+.stars { color: #fbbf24; letter-spacing: 0.08em; font-size: 0.9rem; }
+
+/* ── ⑲ SKILLS BARS ───────────────────────────────────────────── */
+.skill-bar-track {
+    height: 6px;
+    background: rgba(91, 192, 222, 0.15);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--turquoise), var(--sky));
+    width: 0;
+    transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ── ㉑ BOUTON RETOUR EN HAUT ────────────────────────────────── */
+#back-to-top {
+    background: linear-gradient(135deg, var(--turquoise), #1da6a9);
+    color: #fff;
+    border: none;
+    cursor: none;
+}
+
+/* Visible : injecté par JS via les classes Tailwind opacity-100 / translate-y-0 */
+#back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+#back-to-top:hover {
+    box-shadow: 0 8px 28px rgba(42, 193, 196, 0.45);
+    transform: translateY(-4px) !important;
+    filter: brightness(1.1);
+}
+
+/* ── ⑳ RESPONSIVE FINE-TUNING ────────────────────────────────── */
+@media (max-width: 640px) {
+    .hero-code-card { display: none; }
+    .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+}

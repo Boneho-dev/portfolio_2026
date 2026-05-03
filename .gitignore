@@ -1,0 +1,12 @@
+# ── Credentials (ne JAMAIS committer) ─────────────────────────────
+config/mailer.php
+
+# ── Composer ───────────────────────────────────────────────────────
+composer.phar
+/vendor/
+
+# ── Éditeurs & OS ──────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+*.log

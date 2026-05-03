@@ -1,0 +1,43 @@
+<svg width="100%" viewBox="0 0 690 690" role="img" xmlns="http://www.w3.org/2000/svg" style="">
+<title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Agre Agency — Logo</title>
+<desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Logo professionnel pour Agre Agency, agence de développement web. Balise de code stylisée en dégradé vert émeraude vers turquoise, sur fond anthracite, avec le nom de l'agence en typographie sans-serif moderne.</desc>
+
+<defs>
+<linearGradient id="emerald" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#34d399"/>
+<stop offset="45%" stop-color="#10b981"/>
+<stop offset="100%" stop-color="#06b6d4"/>
+</linearGradient>
+<linearGradient id="emeraldSoft" x1="0%" y1="0%" x2="100%" y2="0%">
+<stop offset="0%" stop-color="#34d399" stop-opacity="0"/>
+<stop offset="50%" stop-color="#10b981" stop-opacity="0.9"/>
+<stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+</linearGradient>
+<radialGradient id="bg" cx="50%" cy="45%" r="65%">
+<stop offset="0%" stop-color="#1a2230"/>
+<stop offset="55%" stop-color="#0f1620"/>
+<stop offset="100%" stop-color="#070a0f"/>
+</radialGradient>
+</defs>
+
+<rect width="680" height="680" fill="url(#bg)" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<circle cx="340" cy="340" r="318" fill="none" stroke="#1e293b" stroke-width="1" opacity="0.55" style="fill:none;stroke:rgb(30, 41, 59);color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.55;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<circle cx="340" cy="340" r="296" fill="none" stroke="#0f766e" stroke-width="0.5" opacity="0.35" style="fill:none;stroke:rgb(15, 118, 110);color:rgb(255, 255, 255);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.35;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<g transform="translate(340, 270)" fill="none" stroke="url(#emerald)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" style="fill:none;color:rgb(255, 255, 255);stroke-width:16px;stroke-linecap:round;stroke-linejoin:round;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+<polyline points="-90,-70 -165,0 -90,70" style="fill:none;color:rgb(255, 255, 255);stroke-width:16px;stroke-linecap:round;stroke-linejoin:round;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<line x1="-40" y1="78" x2="40" y2="-78" style="fill:none;color:rgb(255, 255, 255);stroke-width:16px;stroke-linecap:round;stroke-linejoin:round;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<polyline points="90,-70 165,0 90,70" style="fill:none;color:rgb(255, 255, 255);stroke-width:16px;stroke-linecap:round;stroke-linejoin:round;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</g>
+
+<line x1="220" y1="400" x2="460" y2="400" stroke="url(#emeraldSoft)" stroke-width="1.5" style="fill:rgb(0, 0, 0);color:rgb(255, 255, 255);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+<text x="340" y="478" text-anchor="middle" font-family="'Helvetica Neue', 'Inter', system-ui, sans-serif" font-size="68" font-weight="700" fill="#f8fafc" letter-spacing="8" style="fill:rgb(248, 250, 252);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Helvetica Neue&quot;, Inter, system-ui, sans-serif;font-size:68px;font-weight:700;text-anchor:middle;dominant-baseline:auto">AGRE</text>
+
+<text x="340" y="538" text-anchor="middle" font-family="'Helvetica Neue', 'Inter', system-ui, sans-serif" font-size="22" font-weight="400" fill="#64748b" letter-spacing="16" style="fill:rgb(100, 116, 139);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Helvetica Neue&quot;, Inter, system-ui, sans-serif;font-size:22px;font-weight:400;text-anchor:middle;dominant-baseline:auto">A G E N C Y</text>
+
+<circle cx="206" cy="615" r="2" fill="#10b981" opacity="0.7" style="fill:rgb(16, 185, 129);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.7;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<text x="340" y="620" text-anchor="middle" font-family="'Helvetica Neue', system-ui, sans-serif" font-size="12" font-weight="400" fill="#475569" letter-spacing="6" style="fill:rgb(71, 85, 105);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Helvetica Neue&quot;, system-ui, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">WEB DEVELOPMENT · FRANCE</text>
+<circle cx="474" cy="615" r="2" fill="#06b6d4" opacity="0.7" style="fill:rgb(6, 182, 212);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.7;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</svg>
