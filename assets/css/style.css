@@ -17,15 +17,22 @@
 /* ── Base ──────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* iOS Safari : doit être sur html ET body */
+    max-width: 100%;
+}
 
 body {
     cursor: none;        /* remplacé par le curseur custom */
     overflow-x: hidden;
+    max-width: 100%;
     background-color: var(--dark-bg);
     font-family: 'Inter', sans-serif;
     color: #e2e8f0;
 }
+
+main { overflow-x: clip; } /* isole les translateX des animations scroll */
 
 /* Fallback cursor sur écrans tactiles */
 @media (pointer: coarse) {
@@ -796,4 +803,27 @@ body.cursor-hover .cursor-ring {
 @media (max-width: 640px) {
     .hero-code-card { display: none; }
     .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+}
+
+/* ── Écrans très petits (≤ 480px — iPhone SE, 12 mini…) ───────── */
+@media (max-width: 480px) {
+    /* Réduit le padding latéral des conteneurs de section */
+    .max-w-7xl,
+    .max-w-3xl {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* Formulaire : padding interne réduit */
+    #contact-form { padding: 1.25rem; }
+
+    /* Photo "À propos" : jamais plus large que l'écran */
+    #about img { width: 100%; max-width: 100%; }
+
+    /* Titres hero : évite le débordement de ligne */
+    #hero h1 { font-size: 2rem; line-height: 1.2; }
+
+    /* Grille stats (3 colonnes) → colonnes plus étroites */
+    .grid.grid-cols-3 { gap: 0.5rem; }
+    .grid.grid-cols-3 p.text-turquoise { font-size: 1.25rem; }
 }

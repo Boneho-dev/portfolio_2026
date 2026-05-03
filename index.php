@@ -793,15 +793,15 @@ declare(strict_types=1);
                     </div><!-- /col gauche -->
 
                     <!-- Colonne droite : Photo -->
-                    <div class="flex flex-col items-center gap-8" data-animate="right" data-delay="2">
-                        <div class="relative">
+                    <div class="flex flex-col items-center gap-8 min-w-0" data-animate="right" data-delay="2">
+                        <div class="relative w-full flex justify-center">
                             <!-- Halo décoratif derrière la photo -->
                             <div class="absolute inset-0 rounded-3xl"
                                  style="background: radial-gradient(circle, rgba(42,193,196,0.15) 0%, transparent 70%);
                                         transform: scale(1.15); filter: blur(30px);"></div>
                             <img src="assets/images/photo_agre.png"
                                  alt="Ange-Kevin Agré — Fondateur d'Agre Agency"
-                                 class="relative w-72 lg:w-96 rounded-3xl object-cover shadow-2xl"
+                                 class="relative w-72 lg:w-96 max-w-full rounded-3xl object-cover shadow-2xl"
                                  style="border: 2px solid rgba(42,193,196,0.25);">
                         </div>
 
