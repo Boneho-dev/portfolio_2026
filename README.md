@@ -12,14 +12,14 @@ Basé à Angers, le développeur intervient dans toute la France et à l'interna
 
 ## Stack technique
 
-| Technologie | Usage |
-|---|---|
-| PHP 8 | Traitement serveur, endpoint de contact, logique métier |
-| HTML5 | Structure sémantique de la page |
-| Tailwind CSS | Système de design, mise en page responsive |
-| JavaScript ES6+ | Interactions, animations, requêtes AJAX |
-| PHPMailer 7 | Envoi des emails via SMTP Gmail |
-| Composer | Gestion des dépendances PHP |
+| Technologie     | Usage                                                   |
+| --------------- | ------------------------------------------------------- |
+| PHP 8           | Traitement serveur, endpoint de contact, logique métier |
+| HTML5           | Structure sémantique de la page                         |
+| Tailwind CSS    | Système de design, mise en page responsive              |
+| JavaScript ES6+ | Interactions, animations, requêtes AJAX                 |
+| PHPMailer 7     | Envoi des emails via SMTP Gmail                         |
+| Composer        | Gestion des dépendances PHP                             |
 
 ---
 

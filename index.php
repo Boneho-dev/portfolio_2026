@@ -156,7 +156,7 @@ declare(strict_types=1);
                     <div>
                         <!-- Badge disponibilité alternance -->
                         <div class="badge-dispo mb-6 w-fit" data-animate="fade">
-                            Disponible pour alternance — Rentrée 2026
+                            Disponible pour alternance — 2026/2028
                         </div>
 
                         <!-- Surtitre géographique -->
@@ -1194,7 +1194,7 @@ declare(strict_types=1);
                     <a href="#contact" onclick="closeModal('custom')" class="btn-primary">
                         <i class="fas fa-rocket text-xs"></i> Démarrer un projet similaire
                     </a>
-                    <a href="https://agre-custom-production.up.railway.app/"
+                    <a href="https://agre.page.gd/custom/"
                        target="_blank" rel="noopener noreferrer"
                        class="btn-outline">
                         <i class="fas fa-external-link-alt text-xs"></i> Voir le projet
@@ -1268,7 +1268,7 @@ declare(strict_types=1);
                     <a href="#contact" onclick="closeModal('fitness')" class="btn-primary">
                         <i class="fas fa-rocket text-xs"></i> Démarrer un projet similaire
                     </a>
-                    <a href="https://fitness-pwa-production.up.railway.app/"
+                    <a href="https://agre.page.gd/fitness/"
                        target="_blank" rel="noopener noreferrer"
                        class="btn-outline">
                         <i class="fas fa-external-link-alt text-xs"></i> Voir le projet
