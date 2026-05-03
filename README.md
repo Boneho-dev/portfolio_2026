@@ -95,10 +95,6 @@ define('MAILER_FROM_NAME',  'Agre Agency — Portfolio');
 define('MAILER_CHARSET',    'UTF-8');
 ```
 
-Le mot de passe d'application se génère depuis les paramètres de sécurité du compte Google (validation en deux étapes requise).
-
-Ce fichier est exclu du contrôle de version via `.gitignore`. Ne jamais le committer.
-
 **4. Lancer le projet**
 
 Déposer le dossier dans le répertoire `htdocs` de XAMPP et démarrer les modules Apache. Le site est accessible à l'adresse `http://localhost/portfolio_2026`.
