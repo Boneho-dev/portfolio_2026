@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ╔══════════════════════════════════════════════════════════════════╗
  * ║   AGRE AGENCY — Portfolio & Vitrine Web                          ║
@@ -11,10 +12,12 @@
  * et délégué à contact.php qui répond en JSON. Ce fichier ne traite
  * aucune donnée POST.
  */
+
 declare(strict_types=1);
 ?>
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,17 +25,17 @@ declare(strict_types=1);
     <!-- SEO Meta -->
     <title>Agre Agency — Développeur Web Full-Stack & Fondateur | Ange-Kevin Agré</title>
     <meta name="description" content="Agre Agency — Création de sites web, applications sur mesure et solutions numériques innovantes. Basé à Angers & Toulouse. Disponible pour alternance 2026.">
-    <meta name="author"      content="Ange-Kevin Agré">
-    <meta name="keywords"    content="développeur web, PHP 8, Tailwind CSS, JavaScript, alternance 2026, BTS SIO, agence web, Angers, Toulouse">
+    <meta name="author" content="Ange-Kevin Agré">
+    <meta name="keywords" content="développeur web, PHP 8, Tailwind CSS, JavaScript, alternance 2026, BTS SIO, agence web, Angers, Toulouse">
 
     <!-- Open Graph -->
-    <meta property="og:title"       content="Agre Agency — Développeur Web & Fondateur">
+    <meta property="og:title" content="Agre Agency — Développeur Web & Fondateur">
     <meta property="og:description" content="Création de sites, applications web et logiciels sur mesure avec expertise en sécurité web.">
-    <meta property="og:type"        content="website">
-    <meta property="og:image"       content="assets/images/photo_agre.png">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/photo_agre.png">
 
-    <!-- Favicon SVG inline -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23134B5F'/><text y='24' x='5' font-size='22' fill='%232AC1C4' font-family='monospace' font-weight='bold'>A</text></svg>">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
     <!-- Google Fonts : Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,8 +44,8 @@ declare(strict_types=1);
 
     <!-- Font Awesome 6 (icônes) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-          crossorigin="anonymous" referrerpolicy="no-referrer">
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <!-- Tailwind CSS (CDN play) avec palette personnalisée -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -51,13 +54,15 @@ declare(strict_types=1);
             theme: {
                 extend: {
                     colors: {
-                        turquoise : '#2AC1C4',
-                        petrol    : '#134B5F',
+                        turquoise: '#2AC1C4',
+                        petrol: '#134B5F',
                         'sky-blue': '#5BC0DE',
                         anthracite: '#3D4439',
-                        'dark-bg' : '#071e2b',
+                        'dark-bg': '#071e2b',
                     },
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    },
                     backgroundImage: {
                         'gradient-agre': 'linear-gradient(135deg, #134B5F, #2AC1C4)',
                     },
@@ -69,13 +74,14 @@ declare(strict_types=1);
     <!-- Feuille de styles custom (curseur, animations, composants) -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body class="antialiased">
 
     <!-- ══════════════════════════════════════════════════════════
          CURSEUR PERSONNALISÉ
          Deux divs positionnées en fixed, animées via JS/CSS.
          ══════════════════════════════════════════════════════════ -->
-    <div class="cursor-dot"  aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
     <div class="cursor-ring" aria-hidden="true"></div>
 
 
@@ -87,9 +93,9 @@ declare(strict_types=1);
 
             <!-- Logo + nom de l'agence -->
             <a href="#hero" class="flex items-center gap-3 flex-shrink-0 group">
-                <img src="assets/images/agre_agency_logo.svg"
-                     alt="Logo Agre Agency"
-                     class="h-9 w-9 transition-transform group-hover:scale-110">
+                <img src="assets/images/favicon.svg"
+                    alt="Logo Agre Agency"
+                    class="h-9 w-9 transition-transform group-hover:scale-110">
                 <span class="font-bold text-lg text-white tracking-tight">
                     Agre <span class="text-turquoise">Agency</span>
                 </span>
@@ -97,26 +103,26 @@ declare(strict_types=1);
 
             <!-- Liens desktop -->
             <ul class="hidden lg:flex items-center gap-7">
-                <li><a href="#hero"          class="nav-link">Accueil</a></li>
-                <li><a href="#about"         class="nav-link">À propos</a></li>
-                <li><a href="#expertise"     class="nav-link">Expertise</a></li>
-                <li><a href="#services"      class="nav-link">Services</a></li>
-                <li><a href="#projects"      class="nav-link">Projets</a></li>
-                <li><a href="#contact"       class="nav-link">Contact</a></li>
+                <li><a href="#hero" class="nav-link">Accueil</a></li>
+                <li><a href="#about" class="nav-link">À propos</a></li>
+                <li><a href="#expertise" class="nav-link">Expertise</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#projects" class="nav-link">Projets</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
 
             <!-- CTA Navbar -->
             <a href="#contact"
-               class="hidden lg:inline-flex btn-primary text-sm py-2.5 px-5">
+                class="hidden lg:inline-flex btn-primary text-sm py-2.5 px-5">
                 <i class="fas fa-rocket text-xs"></i>
                 Démarrer un projet
             </a>
 
             <!-- Hamburger mobile -->
             <button id="menu-toggle"
-                    class="lg:hidden flex flex-col items-center justify-center w-10 h-10 rounded-lg bg-petrol/40 border border-turquoise/20 text-sky-blue"
-                    aria-label="Ouvrir le menu" aria-expanded="false">
-                <i id="icon-open"  class="fas fa-bars  text-lg"></i>
+                class="lg:hidden flex flex-col items-center justify-center w-10 h-10 rounded-lg bg-petrol/40 border border-turquoise/20 text-sky-blue"
+                aria-label="Ouvrir le menu" aria-expanded="false">
+                <i id="icon-open" class="fas fa-bars  text-lg"></i>
                 <i id="icon-close" class="fas fa-times text-lg hidden"></i>
             </button>
         </nav>
@@ -124,12 +130,12 @@ declare(strict_types=1);
         <!-- Menu mobile déroulant -->
         <div id="mobile-menu" class="lg:hidden border-t border-white/5 bg-dark-bg/95 backdrop-blur-xl">
             <ul class="flex flex-col px-6 py-4 gap-1">
-                <li><a href="#hero"      class="nav-link block py-3 border-b border-white/5">Accueil</a></li>
-                <li><a href="#about"     class="nav-link block py-3 border-b border-white/5">À propos</a></li>
+                <li><a href="#hero" class="nav-link block py-3 border-b border-white/5">Accueil</a></li>
+                <li><a href="#about" class="nav-link block py-3 border-b border-white/5">À propos</a></li>
                 <li><a href="#expertise" class="nav-link block py-3 border-b border-white/5">Expertise</a></li>
-                <li><a href="#services"  class="nav-link block py-3 border-b border-white/5">Services</a></li>
-                <li><a href="#projects"  class="nav-link block py-3 border-b border-white/5">Projets</a></li>
-                <li><a href="#contact"   class="nav-link block py-3 border-b border-white/5">Contact</a></li>
+                <li><a href="#services" class="nav-link block py-3 border-b border-white/5">Services</a></li>
+                <li><a href="#projects" class="nav-link block py-3 border-b border-white/5">Projets</a></li>
+                <li><a href="#contact" class="nav-link block py-3 border-b border-white/5">Contact</a></li>
                 <li class="pt-3">
                     <a href="#contact" class="btn-primary w-full justify-center">
                         <i class="fas fa-rocket text-xs"></i> Démarrer un projet
@@ -161,7 +167,7 @@ declare(strict_types=1);
 
                         <!-- Surtitre géographique -->
                         <p class="text-sky-blue/70 font-medium tracking-widest uppercase text-sm mb-3"
-                           data-animate data-delay="1">
+                            data-animate data-delay="1">
                             <i class="fas fa-map-marker-alt mr-1"></i>
                             Angers — Toulouse
                         </p>
@@ -175,20 +181,20 @@ declare(strict_types=1);
 
                         <!-- Effet de frappe dynamique -->
                         <p class="text-xl sm:text-2xl font-semibold text-sky-blue mb-5 h-8"
-                           data-animate data-delay="3">
+                            data-animate data-delay="3">
                             <span id="typing-text"></span>
                         </p>
 
                         <!-- Sous-titre -->
                         <p class="text-white/75 text-lg mb-3 leading-relaxed max-w-xl"
-                           data-animate data-delay="3">
+                            data-animate data-delay="3">
                             Création de sites, applications web et logiciels sur mesure,
                             avec une expertise en <strong class="text-turquoise">sécurité web</strong>.
                         </p>
 
                         <!-- Paragraphe accroche -->
                         <p class="text-white/55 mb-10 max-w-xl leading-relaxed"
-                           data-animate data-delay="4">
+                            data-animate data-delay="4">
                             Je conçois, dépanne et fais évoluer des solutions digitales innovantes
                             pour les entreprises, artisans et associations.
                         </p>
@@ -282,7 +288,7 @@ declare(strict_types=1);
                 <!-- Indicateur scroll -->
                 <div class="flex justify-center mt-16" data-animate="fade">
                     <a href="#services"
-                       class="flex flex-col items-center gap-2 text-white/35 hover:text-turquoise transition-colors text-xs tracking-widest uppercase">
+                        class="flex flex-col items-center gap-2 text-white/35 hover:text-turquoise transition-colors text-xs tracking-widest uppercase">
                         <span>Découvrir</span>
                         <i class="fas fa-chevron-down animate-bounce"></i>
                     </a>
@@ -369,8 +375,8 @@ declare(strict_types=1);
              § EXPERTISE — Compétences techniques
              ══════════════════════════════════════════════════════ -->
         <section id="expertise"
-                 class="py-24"
-                 style="background: linear-gradient(180deg, #071e2b 0%, #0a2535 50%, #071e2b 100%);">
+            class="py-24"
+            style="background: linear-gradient(180deg, #071e2b 0%, #0a2535 50%, #071e2b 100%);">
             <div class="max-w-7xl mx-auto px-6">
 
                 <div class="text-center mb-16" data-animate>
@@ -473,7 +479,7 @@ declare(strict_types=1);
                 <!-- Badges technos (visuels rapides) -->
                 <div class="mt-14 flex flex-wrap justify-center gap-3" data-animate>
                     <?php
-                    $badges = ['PHP 8','MySQL','Tailwind CSS','JavaScript','HTML5','CSS3','Git','GitHub','PWA','REST API','MVC','XAMPP','Figma','SEO','Linux'];
+                    $badges = ['PHP 8', 'MySQL', 'Tailwind CSS', 'JavaScript', 'HTML5', 'CSS3', 'Git', 'GitHub', 'PWA', 'REST API', 'MVC', 'XAMPP', 'Figma', 'SEO', 'Linux'];
                     foreach ($badges as $badge): ?>
                         <span class="tech-badge"><?= $badge ?></span>
                     <?php endforeach; ?>
@@ -551,8 +557,8 @@ declare(strict_types=1);
                                     <!-- Auteur -->
                                     <div class="flex items-center gap-3">
                                         <img src="<?= htmlspecialchars($t['photo'], ENT_QUOTES, 'UTF-8') ?>"
-                                             alt="Photo de <?= htmlspecialchars($t['name'], ENT_QUOTES, 'UTF-8') ?>"
-                                             class="w-11 h-11 rounded-full object-cover avatar-gradient-border">
+                                            alt="Photo de <?= htmlspecialchars($t['name'], ENT_QUOTES, 'UTF-8') ?>"
+                                            class="w-11 h-11 rounded-full object-cover avatar-gradient-border">
                                         <div>
                                             <p class="text-white font-semibold text-sm">
                                                 <?= htmlspecialchars($t['name'], ENT_QUOTES, 'UTF-8') ?>
@@ -590,8 +596,8 @@ declare(strict_types=1);
              § PROJETS — Réalisations majeures
              ══════════════════════════════════════════════════════ -->
         <section id="projects"
-                 class="py-24"
-                 style="background: linear-gradient(180deg, #071e2b 0%, #0b2535 100%);">
+            class="py-24"
+            style="background: linear-gradient(180deg, #071e2b 0%, #0b2535 100%);">
             <div class="max-w-7xl mx-auto px-6">
 
                 <div class="text-center mb-16" data-animate>
@@ -610,9 +616,9 @@ declare(strict_types=1);
 
                     <!-- Projet 1 : AGRE Custom -->
                     <article class="project-card" data-animate="left" data-delay="1"
-                             onclick="openModal('custom')" data-cursor="pointer"
-                             role="button" tabindex="0"
-                             aria-label="Voir le projet AGRE Custom">
+                        onclick="openModal('custom')" data-cursor="pointer"
+                        role="button" tabindex="0"
+                        aria-label="Voir le projet AGRE Custom">
                         <img src="assets/images/custom_site.jpg" alt="AGRE Custom — Site e-commerce sur mesure">
                         <div class="project-overlay">
                             <div class="flex flex-wrap gap-2 mb-3">
@@ -633,9 +639,9 @@ declare(strict_types=1);
 
                     <!-- Projet 2 : Fitness Tracker -->
                     <article class="project-card" data-animate="right" data-delay="2"
-                             onclick="openModal('fitness')" data-cursor="pointer"
-                             role="button" tabindex="0"
-                             aria-label="Voir le projet Fitness Tracker">
+                        onclick="openModal('fitness')" data-cursor="pointer"
+                        role="button" tabindex="0"
+                        aria-label="Voir le projet Fitness Tracker">
                         <img src="assets/images/fitness_apps.jpeg" alt="Fitness Tracker — Application PWA de suivi sportif">
                         <div class="project-overlay">
                             <div class="flex flex-wrap gap-2 mb-3">
@@ -681,7 +687,7 @@ declare(strict_types=1);
                     <div>
                         <!-- Accroche recruteurs -->
                         <div class="bg-petrol/30 border border-turquoise/20 rounded-2xl p-5 mb-8"
-                             data-animate="left" data-delay="1">
+                            data-animate="left" data-delay="1">
                             <p class="text-turquoise font-semibold flex items-center gap-2 mb-2">
                                 <i class="fas fa-star text-sm"></i>
                                 Pour les recruteurs
@@ -707,16 +713,18 @@ declare(strict_types=1);
                                     <strong class="text-sky-blue">résolvent de vrais problèmes</strong>.
                                 </p>
                                 <p>
-                                    Ma passion pour le développement s'accompagne d'un besoin d'enseigner et
-                                    de transmettre. Mon projet de long terme est d'ouvrir un
-                                    <strong class="text-turquoise">centre de formation</strong> pour initier
-                                    les lycéens, étudiants et professionnels en reconversion à la programmation —
-                                    parce que chaque ligne de code écrite est une porte d'opportunités ouverte.
+                                    Ma passion pour le développement nourrit un désir constant d'apprendre et de
+                                    transmettre. Mon projet à long terme est de faire évoluer cette structure en une
+                                    <strong class="text-turquoise">agence de développement de référence</strong>,
+                                    capable d'accompagner entreprises, particuliers et étudiants par l'apport de
+                                    solutions innovantes. Pour moi, chaque ligne de code est une opportunité de
+                                    créer de la valeur et de simplifier le quotidien.
                                 </p>
                                 <p>
-                                    Chaque projet que je livre est pensé avec rigueur technique
-                                    (architecture propre, sécurité, performances) et sensibilité humaine
-                                    (UX claire, accompagnement pédagogique).
+                                    Chaque projet que je livre allie une rigueur technique absolue à une sensibilité
+                                    humaine profonde. Je mise sur une architecture propre, une sécurité renforcée et
+                                    des performances optimales, tout en garantissant une expérience utilisateur
+                                    claire et un accompagnement pédagogique sur mesure.
                                 </p>
                             </div>
                         </div>
@@ -797,12 +805,12 @@ declare(strict_types=1);
                         <div class="relative w-full flex justify-center">
                             <!-- Halo décoratif derrière la photo -->
                             <div class="absolute inset-0 rounded-3xl"
-                                 style="background: radial-gradient(circle, rgba(42,193,196,0.15) 0%, transparent 70%);
+                                style="background: radial-gradient(circle, rgba(42,193,196,0.15) 0%, transparent 70%);
                                         transform: scale(1.15); filter: blur(30px);"></div>
                             <img src="assets/images/photo_agre.png"
-                                 alt="Ange-Kevin Agré — Fondateur d'Agre Agency"
-                                 class="relative w-72 lg:w-96 max-w-full rounded-3xl object-cover shadow-2xl"
-                                 style="border: 2px solid rgba(42,193,196,0.25);">
+                                alt="Ange-Kevin Agré — Fondateur d'Agre Agency"
+                                class="relative w-72 lg:w-96 max-w-full rounded-3xl object-cover shadow-2xl"
+                                style="border: 2px solid rgba(42,193,196,0.25);">
                         </div>
 
                         <!-- Stats rapides -->
@@ -823,8 +831,8 @@ declare(strict_types=1);
 
                         <!-- Lien LinkedIn -->
                         <a href="https://www.linkedin.com/in/ange-kevin-agre-a03b3a386"
-                           target="_blank" rel="noopener noreferrer"
-                           class="btn-outline w-full max-w-sm justify-center">
+                            target="_blank" rel="noopener noreferrer"
+                            class="btn-outline w-full max-w-sm justify-center">
                             <i class="fab fa-linkedin text-[#0A66C2]"></i>
                             Voir mon profil LinkedIn
                         </a>
@@ -839,8 +847,8 @@ declare(strict_types=1);
              § FAQ — Accordéon interactif
              ══════════════════════════════════════════════════════ -->
         <section id="faq"
-                 class="py-24"
-                 style="background: linear-gradient(180deg, #0a2535 0%, #071e2b 100%);">
+            class="py-24"
+            style="background: linear-gradient(180deg, #0a2535 0%, #071e2b 100%);">
             <div class="max-w-3xl mx-auto px-6">
 
                 <div class="text-center mb-14" data-animate>
@@ -852,7 +860,7 @@ declare(strict_types=1);
                 </div>
 
                 <div class="space-y-0 rounded-2xl overflow-hidden border border-white/6"
-                     data-animate data-delay="1">
+                    data-animate data-delay="1">
                     <?php
                     $faqs = [
                         [
@@ -940,7 +948,7 @@ declare(strict_types=1);
                                         <p class="text-white/40 text-xs uppercase tracking-widest"><?= $c['label'] ?></p>
                                         <?php if ($c['href']): ?>
                                             <a href="<?= htmlspecialchars($c['href'], ENT_QUOTES, 'UTF-8') ?>"
-                                               class="text-white font-medium text-sm hover:text-turquoise transition-colors">
+                                                class="text-white font-medium text-sm hover:text-turquoise transition-colors">
                                                 <?= htmlspecialchars($c['value'], ENT_QUOTES, 'UTF-8') ?>
                                             </a>
                                         <?php else: ?>
@@ -955,18 +963,18 @@ declare(strict_types=1);
                         <h3 class="text-white font-bold mb-4">Retrouvez-moi sur</h3>
                         <div class="flex flex-wrap gap-3">
                             <a href="https://www.linkedin.com/in/ange-kevin-agre-a03b3a386"
-                               target="_blank" rel="noopener noreferrer"
-                               class="social-link" aria-label="LinkedIn">
+                                target="_blank" rel="noopener noreferrer"
+                                class="social-link" aria-label="LinkedIn">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
                             <a href="https://github.com/Boneho-dev"
-                               target="_blank" rel="noopener noreferrer"
-                               class="social-link" aria-label="GitHub">
+                                target="_blank" rel="noopener noreferrer"
+                                class="social-link" aria-label="GitHub">
                                 <i class="fab fa-github"></i>
                             </a>
                             <a href="https://www.facebook.com/profile.php?id=61580092377799&locale=fr_FR"
-                               target="_blank" rel="noopener noreferrer"
-                               class="social-link" aria-label="Facebook">
+                                target="_blank" rel="noopener noreferrer"
+                                class="social-link" aria-label="Facebook">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                         </div>
@@ -979,7 +987,7 @@ declare(strict_types=1);
                         <div id="form-feedback" class="hidden mb-6" role="alert" aria-live="polite"></div>
 
                         <form id="contact-form" method="POST" action="#contact" novalidate
-                              class="bg-petrol/20 border border-white/8 rounded-2xl p-8 space-y-5">
+                            class="bg-petrol/20 border border-white/8 rounded-2xl p-8 space-y-5">
 
                             <!-- Honeypot anti-spam (masqué CSS) -->
                             <div style="display:none" aria-hidden="true">
@@ -992,18 +1000,18 @@ declare(strict_types=1);
                                         Votre nom *
                                     </label>
                                     <input type="text" id="name" name="name" required
-                                           class="form-input"
-                                           placeholder="Jean Dupont"
-                                           value="<?= htmlspecialchars($_POST['name'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+                                        class="form-input"
+                                        placeholder="Jean Dupont"
+                                        value="<?= htmlspecialchars($_POST['name'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
                                 </div>
                                 <div>
                                     <label class="block text-white/60 text-xs font-semibold uppercase tracking-widest mb-2" for="email">
                                         Votre email *
                                     </label>
                                     <input type="email" id="email" name="email" required
-                                           class="form-input"
-                                           placeholder="jean@exemple.fr"
-                                           value="<?= htmlspecialchars($_POST['email'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+                                        class="form-input"
+                                        placeholder="jean@exemple.fr"
+                                        value="<?= htmlspecialchars($_POST['email'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
                                 </div>
                             </div>
 
@@ -1012,9 +1020,9 @@ declare(strict_types=1);
                                     Sujet *
                                 </label>
                                 <input type="text" id="subject" name="subject" required
-                                       class="form-input"
-                                       placeholder="Création d'un site vitrine"
-                                       value="<?= htmlspecialchars($_POST['subject'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+                                    class="form-input"
+                                    placeholder="Création d'un site vitrine"
+                                    value="<?= htmlspecialchars($_POST['subject'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
                             </div>
 
                             <div>
@@ -1022,8 +1030,8 @@ declare(strict_types=1);
                                     Message *
                                 </label>
                                 <textarea id="message" name="message" rows="5" required
-                                          class="form-input resize-none"
-                                          placeholder="Décrivez votre projet ou votre besoin…"><?= htmlspecialchars($_POST['message'] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea>
+                                    class="form-input resize-none"
+                                    placeholder="Décrivez votre projet ou votre besoin…"><?= htmlspecialchars($_POST['message'] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea>
                             </div>
 
                             <button type="submit" name="contact_submit" class="btn-primary w-full justify-center py-4 text-base">
@@ -1048,14 +1056,14 @@ declare(strict_types=1);
          FOOTER
          ══════════════════════════════════════════════════════════ -->
     <footer class="border-t border-white/6"
-            style="background: linear-gradient(180deg, #050f17, #071e2b);">
+        style="background: linear-gradient(180deg, #050f17, #071e2b);">
         <div class="max-w-7xl mx-auto px-6 py-12">
             <div class="grid md:grid-cols-3 gap-10 mb-10">
 
                 <!-- Logo + description -->
                 <div>
                     <a href="#hero" class="flex items-center gap-3 mb-4 w-fit">
-                        <img src="assets/images/agre_agency_logo.svg" alt="Logo Agre Agency" class="h-8 w-8">
+                        <img src="assets/images/favicon.svg" alt="Logo Agre Agency" class="h-8 w-8">
                         <span class="font-bold text-white text-lg">Agre <span class="text-turquoise">Agency</span></span>
                     </a>
                     <p class="text-white/45 text-sm leading-relaxed">
@@ -1079,7 +1087,7 @@ declare(strict_types=1);
                         foreach ($footerLinks as $link): ?>
                             <li>
                                 <a href="<?= $link['href'] ?>"
-                                   class="text-white/45 hover:text-turquoise transition-colors text-sm flex items-center gap-2">
+                                    class="text-white/45 hover:text-turquoise transition-colors text-sm flex items-center gap-2">
                                     <i class="fas fa-chevron-right text-[9px] text-turquoise/50"></i>
                                     <?= $link['label'] ?>
                                 </a>
@@ -1093,27 +1101,27 @@ declare(strict_types=1);
                     <h4 class="text-white font-semibold mb-4 text-sm uppercase tracking-widest">Me retrouver</h4>
                     <div class="flex gap-3 mb-5">
                         <a href="https://www.linkedin.com/in/ange-kevin-agre-a03b3a386"
-                           target="_blank" rel="noopener noreferrer"
-                           class="social-link" aria-label="LinkedIn">
+                            target="_blank" rel="noopener noreferrer"
+                            class="social-link" aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                         <a href="https://github.com/Boneho-dev"
-                           target="_blank" rel="noopener noreferrer"
-                           class="social-link" aria-label="GitHub">
+                            target="_blank" rel="noopener noreferrer"
+                            class="social-link" aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
                         <a href="https://www.facebook.com/profile.php?id=61580092377799&locale=fr_FR"
-                           target="_blank" rel="noopener noreferrer"
-                           class="social-link" aria-label="Facebook">
+                            target="_blank" rel="noopener noreferrer"
+                            class="social-link" aria-label="Facebook">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                         <a href="mailto:agrekevin09@gmail.com"
-                           class="social-link" aria-label="Email">
+                            class="social-link" aria-label="Email">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
                     <a href="tel:+33784807304"
-                       class="text-white/45 hover:text-turquoise transition-colors text-sm flex items-center gap-2">
+                        class="text-white/45 hover:text-turquoise transition-colors text-sm flex items-center gap-2">
                         <i class="fas fa-phone text-turquoise/60 text-xs"></i>
                         +33 07 84 80 73 04
                     </a>
@@ -1139,13 +1147,13 @@ declare(strict_types=1);
             <!-- Image bannière -->
             <div class="relative h-56 overflow-hidden rounded-t-2xl">
                 <img src="assets/images/custom_site.jpg"
-                     alt="AGRE Custom" class="w-full h-full object-cover">
+                    alt="AGRE Custom" class="w-full h-full object-cover">
                 <div class="absolute inset-0"
-                     style="background: linear-gradient(to top, #0b2535 0%, transparent 60%);">
+                    style="background: linear-gradient(to top, #0b2535 0%, transparent 60%);">
                 </div>
                 <button onclick="closeModal('custom')"
-                        class="absolute top-4 right-4 w-9 h-9 bg-black/50 border border-white/15 rounded-full flex items-center justify-center text-white hover:bg-black/80 transition-colors"
-                        aria-label="Fermer">
+                    class="absolute top-4 right-4 w-9 h-9 bg-black/50 border border-white/15 rounded-full flex items-center justify-center text-white hover:bg-black/80 transition-colors"
+                    aria-label="Fermer">
                     <i class="fas fa-times text-sm"></i>
                 </button>
             </div>
@@ -1176,13 +1184,15 @@ declare(strict_types=1);
                 <!-- Fonctionnalités clés -->
                 <h3 class="text-white/40 text-xs uppercase tracking-widest mb-3">Fonctionnalités</h3>
                 <ul class="space-y-2 mb-8">
-                    <?php foreach ([
-                        'Design responsive & accessibilité WCAG',
-                        'Mode PWA — installable sur mobile',
-                        'Tableau de bord administrateur',
-                        'Formulaire de devis sécurisé',
-                        'Optimisation des performances (Lighthouse 90+)',
-                    ] as $feat): ?>
+                    <?php foreach (
+                        [
+                            'Design responsive & accessibilité WCAG',
+                            'Mode PWA — installable sur mobile',
+                            'Tableau de bord administrateur',
+                            'Formulaire de devis sécurisé',
+                            'Optimisation des performances (Lighthouse 90+)',
+                        ] as $feat
+                    ): ?>
                         <li class="flex items-start gap-2 text-white/60 text-sm">
                             <i class="fas fa-check text-turquoise text-xs mt-1 flex-shrink-0"></i>
                             <?= $feat ?>
@@ -1195,8 +1205,8 @@ declare(strict_types=1);
                         <i class="fas fa-rocket text-xs"></i> Démarrer un projet similaire
                     </a>
                     <a href="https://agre.page.gd/custom/"
-                       target="_blank" rel="noopener noreferrer"
-                       class="btn-outline">
+                        target="_blank" rel="noopener noreferrer"
+                        class="btn-outline">
                         <i class="fas fa-external-link-alt text-xs"></i> Voir le projet
                     </a>
                     <button onclick="closeModal('custom')" class="btn-outline">
@@ -1214,13 +1224,13 @@ declare(strict_types=1);
             <!-- Image bannière -->
             <div class="relative h-56 overflow-hidden rounded-t-2xl">
                 <img src="assets/images/fitness_apps.jpeg"
-                     alt="Fitness Tracker" class="w-full h-full object-cover">
+                    alt="Fitness Tracker" class="w-full h-full object-cover">
                 <div class="absolute inset-0"
-                     style="background: linear-gradient(to top, #0b2535 0%, transparent 60%);">
+                    style="background: linear-gradient(to top, #0b2535 0%, transparent 60%);">
                 </div>
                 <button onclick="closeModal('fitness')"
-                        class="absolute top-4 right-4 w-9 h-9 bg-black/50 border border-white/15 rounded-full flex items-center justify-center text-white hover:bg-black/80 transition-colors"
-                        aria-label="Fermer">
+                    class="absolute top-4 right-4 w-9 h-9 bg-black/50 border border-white/15 rounded-full flex items-center justify-center text-white hover:bg-black/80 transition-colors"
+                    aria-label="Fermer">
                     <i class="fas fa-times text-sm"></i>
                 </button>
             </div>
@@ -1250,13 +1260,15 @@ declare(strict_types=1);
                 <!-- Fonctionnalités clés -->
                 <h3 class="text-white/40 text-xs uppercase tracking-widest mb-3">Fonctionnalités</h3>
                 <ul class="space-y-2 mb-8">
-                    <?php foreach ([
-                        'Tableau de bord avec graphiques interactifs (Chart.js)',
-                        'Suivi multi-activités (cardio, musculation, yoga…)',
-                        'Authentification sécurisée bcrypt + sessions',
-                        'Notifications de rappel entraînement',
-                        'Export des données en CSV',
-                    ] as $feat): ?>
+                    <?php foreach (
+                        [
+                            'Tableau de bord avec graphiques interactifs (Chart.js)',
+                            'Suivi multi-activités (cardio, musculation, yoga…)',
+                            'Authentification sécurisée bcrypt + sessions',
+                            'Notifications de rappel entraînement',
+                            'Export des données en CSV',
+                        ] as $feat
+                    ): ?>
                         <li class="flex items-start gap-2 text-white/60 text-sm">
                             <i class="fas fa-check text-turquoise text-xs mt-1 flex-shrink-0"></i>
                             <?= $feat ?>
@@ -1269,8 +1281,8 @@ declare(strict_types=1);
                         <i class="fas fa-rocket text-xs"></i> Démarrer un projet similaire
                     </a>
                     <a href="https://agre.page.gd/fitness/"
-                       target="_blank" rel="noopener noreferrer"
-                       class="btn-outline">
+                        target="_blank" rel="noopener noreferrer"
+                        class="btn-outline">
                         <i class="fas fa-external-link-alt text-xs"></i> Voir le projet
                     </a>
                     <button onclick="closeModal('fitness')" class="btn-outline">
@@ -1287,9 +1299,9 @@ declare(strict_types=1);
          Apparaît en bas à droite après 400px de scroll.
          ══════════════════════════════════════════════════════════ -->
     <button id="back-to-top"
-            onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-            aria-label="Retour en haut de page"
-            class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full flex items-center justify-center
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        aria-label="Retour en haut de page"
+        class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full flex items-center justify-center
                    shadow-lg transition-all duration-300 opacity-0 translate-y-4 pointer-events-none">
         <i class="fas fa-arrow-up text-sm"></i>
     </button>
@@ -1300,4 +1312,5 @@ declare(strict_types=1);
     <script src="assets/js/main.js" defer></script>
 
 </body>
+
 </html>

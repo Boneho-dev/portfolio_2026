@@ -482,14 +482,24 @@ function initContactForm() {
         feedback.classList.add('hidden'); /* masquer un éventuel feedback précédent */
 
         try {
-            const response = await fetch('contact.php', {
+            const response = await fetch('./contact.php', {
                 method : 'POST',
                 body   : new FormData(form),
             });
 
-            /* On parse le JSON même si le statut HTTP est 4xx/5xx */
-            const data = await response.json();
-            console.log('[Agre Agency] Réponse serveur :', data);
+            /* Lire le corps brut d'abord — permet de logger en cas de non-JSON */
+            const rawText = await response.text();
+            console.log('[Agre Agency] Réponse brute (HTTP', response.status, ') :', rawText);
+
+            let data;
+            try {
+                data = JSON.parse(rawText);
+            } catch (jsonErr) {
+                console.error('[Agre Agency] Réponse non-JSON — extrait :', rawText.substring(0, 600));
+                throw new Error(`Réponse serveur invalide (HTTP ${response.status})`);
+            }
+
+            console.log('[Agre Agency] Réponse serveur parsée :', data);
 
             if (data.status === 'success') {
                 showFeedback('success', data.message ?? 'Message envoyé ! Je vous répondrai dans les 24h.');
