@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 /**
  * ╔══════════════════════════════════════════════════════════════════╗
@@ -688,7 +688,7 @@ declare(strict_types=1);
                         onclick="openModal('chatbot')" data-cursor="pointer"
                         role="button" tabindex="0"
                         aria-label="Voir le projet Chatbot IA Agre Agency">
-                        <img src="assets/images/chatbot_site.jpg" alt="Chatbot IA — Assistant multilingue avec Claude API">
+                        <img src="assets/images/chatbot.jpg" alt="Chatbot IA — Assistant multilingue avec Claude API">
                         <div class="project-overlay">
                             <div class="flex flex-wrap gap-2 mb-3">
                                 <span class="tech-badge">Claude API</span>
@@ -1367,15 +1367,17 @@ declare(strict_types=1);
                 </div>
                 <h3 class="text-white/40 text-xs uppercase tracking-widest mb-3">Fonctionnalités</h3>
                 <ul class="space-y-2 mb-8">
-                    <?php foreach ([
-                        'Création & personnalisation de factures/devis',
-                        'Gestion dynamique de clients et prestations',
-                        'Génération IA de descriptions de services',
-                        'Export PDF instantané aux normes françaises',
-                        'Dashboard de suivi — statistiques & historique',
-                        'Authentification sécurisée & chiffrement données',
-                        'Mode hors-ligne synchronisation cloud',
-                    ] as $feat): ?>
+                    <?php foreach (
+                        [
+                            'Création & personnalisation de factures/devis',
+                            'Gestion dynamique de clients et prestations',
+                            'Génération IA de descriptions de services',
+                            'Export PDF instantané aux normes françaises',
+                            'Dashboard de suivi — statistiques & historique',
+                            'Authentification sécurisée & chiffrement données',
+                            'Mode hors-ligne synchronisation cloud',
+                        ] as $feat
+                    ): ?>
                         <li class="flex items-start gap-2 text-white/60 text-sm">
                             <i class="fas fa-check text-turquoise text-xs mt-1 flex-shrink-0"></i>
                             <?= $feat ?>
@@ -1402,7 +1404,7 @@ declare(strict_types=1);
     <div id="modal-chatbot" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-chatbot-title">
         <div class="modal-box w-full">
             <div class="relative h-56 overflow-hidden rounded-t-2xl">
-                <img src="assets/images/chatbot_site.jpg" alt="Chatbot IA — Agre Agency" class="w-full h-full object-cover">
+                <img src="assets/images/chatbot.jpg" alt="Chatbot IA — Agre Agency" class="w-full h-full object-cover">
                 <div class="absolute inset-0" style="background: linear-gradient(to top, #0b2535 0%, transparent 60%);"></div>
                 <button onclick="closeModal('chatbot')"
                     class="absolute top-4 right-4 w-9 h-9 bg-black/50 border border-white/15 rounded-full flex items-center justify-center text-white hover:bg-black/80 transition-colors"
@@ -1426,15 +1428,17 @@ declare(strict_types=1);
                 </div>
                 <h3 class="text-white/40 text-xs uppercase tracking-widest mb-3">Fonctionnalités</h3>
                 <ul class="space-y-2 mb-8">
-                    <?php foreach ([
-                        'Navigation persistante par cartes interactives',
-                        'Basculement instantané FR ↔ EN',
-                        'Intégration Claude API — réponses intelligentes',
-                        'Suggestions contextuelles & fallback contact auto',
-                        'Design glassmorphism & animations CSS3',
-                        'Responsive parfait (mobile, tablet, desktop)',
-                        'Mode production — zéro dépendances externes',
-                    ] as $feat): ?>
+                    <?php foreach (
+                        [
+                            'Navigation persistante par cartes interactives',
+                            'Basculement instantané FR ↔ EN',
+                            'Intégration Claude API — réponses intelligentes',
+                            'Suggestions contextuelles & fallback contact auto',
+                            'Design glassmorphism & animations CSS3',
+                            'Responsive parfait (mobile, tablet, desktop)',
+                            'Mode production — zéro dépendances externes',
+                        ] as $feat
+                    ): ?>
                         <li class="flex items-start gap-2 text-white/60 text-sm">
                             <i class="fas fa-check text-turquoise text-xs mt-1 flex-shrink-0"></i>
                             <?= $feat ?>
