@@ -660,6 +660,52 @@ declare(strict_types=1);
                         </div>
                     </article>
 
+                    <!-- Projet 3 : FacturePro -->
+                    <article class="project-card" data-animate="left" data-delay="3"
+                        onclick="openModal('facturepro')" data-cursor="pointer"
+                        role="button" tabindex="0"
+                        aria-label="Voir le projet FacturePro">
+                        <img src="assets/images/facturepro_site.jpg" alt="FacturePro — SaaS de facturation pour auto-entrepreneurs">
+                        <div class="project-overlay">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">Supabase</span>
+                                <span class="tech-badge">Tailwind</span>
+                                <span class="tech-badge">IA</span>
+                            </div>
+                            <h3 class="text-white text-2xl font-bold mb-1">FacturePro</h3>
+                            <p class="text-white/60 text-sm mb-4">SaaS de facturation pour auto-entrepreneurs</p>
+                            <div class="project-reveal">
+                                <button class="btn-primary text-sm py-2.5 px-5">
+                                    <i class="fas fa-eye text-xs"></i> Voir le projet
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Projet 4 : Chatbot IA -->
+                    <article class="project-card" data-animate="right" data-delay="4"
+                        onclick="openModal('chatbot')" data-cursor="pointer"
+                        role="button" tabindex="0"
+                        aria-label="Voir le projet Chatbot IA Agre Agency">
+                        <img src="assets/images/chatbot_site.jpg" alt="Chatbot IA — Assistant multilingue avec Claude API">
+                        <div class="project-overlay">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="tech-badge">Claude API</span>
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Multilingue</span>
+                            </div>
+                            <h3 class="text-white text-2xl font-bold mb-1">Chatbot IA</h3>
+                            <p class="text-white/60 text-sm mb-4">Assistant IA multilingue avec Claude API</p>
+                            <div class="project-reveal">
+                                <button class="btn-primary text-sm py-2.5 px-5">
+                                    <i class="fas fa-eye text-xs"></i> Voir le projet
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
                 </div>
             </div>
         </section>
@@ -1292,6 +1338,123 @@ declare(strict_types=1);
             </div>
         </div>
     </div><!-- /modal-fitness -->
+
+
+    <!-- Modale : FacturePro -->
+    <div id="modal-facturepro" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-facturepro-title">
+        <div class="modal-box w-full">
+            <div class="relative h-56 overflow-hidden rounded-t-2xl">
+                <img src="assets/images/facturepro_site.jpg" alt="FacturePro" class="w-full h-full object-cover">
+                <div class="absolute inset-0" style="background: linear-gradient(to top, #0b2535 0%, transparent 60%);"></div>
+                <button onclick="closeModal('facturepro')"
+                    class="absolute top-4 right-4 w-9 h-9 bg-black/50 border border-white/15 rounded-full flex items-center justify-center text-white hover:bg-black/80 transition-colors"
+                    aria-label="Fermer"><i class="fas fa-times text-sm"></i></button>
+            </div>
+            <div class="p-8">
+                <span class="section-tag text-xs mb-3 inline-flex"><i class="fas fa-file-invoice"></i> SaaS</span>
+                <h2 id="modal-facturepro-title" class="text-2xl font-bold text-white mb-3">FacturePro</h2>
+                <p class="text-white/65 text-sm leading-7 mb-6">
+                    SaaS de facturation conçu pour les auto-entrepreneurs français. Génération rapide de factures
+                    et devis conformes à la législation française, gestion des clients, historique et export PDF.
+                    Interface intuitive, authentification sécurisée et intégration IA pour descriptions
+                    intelligentes. Backend assure persistance des données et conformité RGPD.
+                </p>
+                <h3 class="text-white/40 text-xs uppercase tracking-widest mb-3">Stack technique</h3>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <?php foreach (['React', 'Supabase', 'JavaScript ES6+', 'Tailwind CSS', 'Authentication', 'PDF Generation', 'API REST'] as $tag): ?>
+                        <span class="tech-badge"><?= $tag ?></span>
+                    <?php endforeach; ?>
+                </div>
+                <h3 class="text-white/40 text-xs uppercase tracking-widest mb-3">Fonctionnalités</h3>
+                <ul class="space-y-2 mb-8">
+                    <?php foreach ([
+                        'Création & personnalisation de factures/devis',
+                        'Gestion dynamique de clients et prestations',
+                        'Génération IA de descriptions de services',
+                        'Export PDF instantané aux normes françaises',
+                        'Dashboard de suivi — statistiques & historique',
+                        'Authentification sécurisée & chiffrement données',
+                        'Mode hors-ligne synchronisation cloud',
+                    ] as $feat): ?>
+                        <li class="flex items-start gap-2 text-white/60 text-sm">
+                            <i class="fas fa-check text-turquoise text-xs mt-1 flex-shrink-0"></i>
+                            <?= $feat ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://agre.page.gd/portfolio/#contact" onclick="closeModal('facturepro')" class="btn-primary">
+                        <i class="fas fa-rocket text-xs"></i> Démarrer un projet similaire
+                    </a>
+                    <a href="https://agre.page.gd/facture/" target="_blank" rel="noopener noreferrer" class="btn-outline">
+                        <i class="fas fa-external-link-alt text-xs"></i> Voir le projet
+                    </a>
+                    <button onclick="closeModal('facturepro')" class="btn-outline">
+                        <i class="fas fa-times text-xs"></i> Fermer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div><!-- /modal-facturepro -->
+
+
+    <!-- Modale : Chatbot IA -->
+    <div id="modal-chatbot" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-chatbot-title">
+        <div class="modal-box w-full">
+            <div class="relative h-56 overflow-hidden rounded-t-2xl">
+                <img src="assets/images/chatbot_site.jpg" alt="Chatbot IA — Agre Agency" class="w-full h-full object-cover">
+                <div class="absolute inset-0" style="background: linear-gradient(to top, #0b2535 0%, transparent 60%);"></div>
+                <button onclick="closeModal('chatbot')"
+                    class="absolute top-4 right-4 w-9 h-9 bg-black/50 border border-white/15 rounded-full flex items-center justify-center text-white hover:bg-black/80 transition-colors"
+                    aria-label="Fermer"><i class="fas fa-times text-sm"></i></button>
+            </div>
+            <div class="p-8">
+                <span class="section-tag text-xs mb-3 inline-flex"><i class="fas fa-robot"></i> IA</span>
+                <h2 id="modal-chatbot-title" class="text-2xl font-bold text-white mb-3">Chatbot IA — Agre Agency</h2>
+                <p class="text-white/65 text-sm leading-7 mb-6">
+                    Chatbot intelligent multilingue (FR/EN) intégrant Claude API pour répondre intelligemment
+                    aux questions visiteurs. Navigation fluide par cartes (Services, Projets, Tarifs, À propos,
+                    Message libre). Design premium avec animations fluides, dégradé teal/turquoise, responsive.
+                    Backend PHP gère appels sécurisés à Claude, frontend vanilla assure performance.
+                    Démonstration intégration IA en production.
+                </p>
+                <h3 class="text-white/40 text-xs uppercase tracking-widest mb-3">Stack technique</h3>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <?php foreach (['Claude API', 'PHP', 'JavaScript Vanilla', 'HTML5', 'CSS3', 'Multilingue FR/EN', 'Responsive'] as $tag): ?>
+                        <span class="tech-badge"><?= $tag ?></span>
+                    <?php endforeach; ?>
+                </div>
+                <h3 class="text-white/40 text-xs uppercase tracking-widest mb-3">Fonctionnalités</h3>
+                <ul class="space-y-2 mb-8">
+                    <?php foreach ([
+                        'Navigation persistante par cartes interactives',
+                        'Basculement instantané FR ↔ EN',
+                        'Intégration Claude API — réponses intelligentes',
+                        'Suggestions contextuelles & fallback contact auto',
+                        'Design glassmorphism & animations CSS3',
+                        'Responsive parfait (mobile, tablet, desktop)',
+                        'Mode production — zéro dépendances externes',
+                    ] as $feat): ?>
+                        <li class="flex items-start gap-2 text-white/60 text-sm">
+                            <i class="fas fa-check text-turquoise text-xs mt-1 flex-shrink-0"></i>
+                            <?= $feat ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://agre.page.gd/portfolio/#contact" onclick="closeModal('chatbot')" class="btn-primary">
+                        <i class="fas fa-rocket text-xs"></i> Démarrer un projet similaire
+                    </a>
+                    <a href="https://agre.page.gd/chatbot/frontend/index.html" target="_blank" rel="noopener noreferrer" class="btn-outline">
+                        <i class="fas fa-external-link-alt text-xs"></i> Voir le projet
+                    </a>
+                    <button onclick="closeModal('chatbot')" class="btn-outline">
+                        <i class="fas fa-times text-xs"></i> Fermer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div><!-- /modal-chatbot -->
 
 
     <!-- ══════════════════════════════════════════════════════════
