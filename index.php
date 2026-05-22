@@ -1,4 +1,5 @@
-﻿<?php
+<?php
+declare(strict_types=1);
 
 /**
  * ╔══════════════════════════════════════════════════════════════════╗
@@ -12,8 +13,6 @@
  * et délégué à contact.php qui répond en JSON. Ce fichier ne traite
  * aucune donnée POST.
  */
-
-declare(strict_types=1);
 ?>
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">

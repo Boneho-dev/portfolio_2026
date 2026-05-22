@@ -1,7 +1,3 @@
-# Masquer les erreurs PHP aux visiteurs en production
-php_flag display_errors off
-php_flag log_errors on
-
 # Interdire l'accès direct au répertoire config/
 <IfModule mod_rewrite.c>
     RewriteEngine On
